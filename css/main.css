@@ -88,6 +88,7 @@ body {
   align-items: center;
   cursor: pointer;
   font-size: 1.1rem;
+  outline: none;
 }
 
 .btn-number {
