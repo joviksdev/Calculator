@@ -39,12 +39,16 @@ class Calculator {
   };
 
   performCalulation = set => {
-    let value = set.join("");
-    const result = parseFloat(eval(value));
-    this.total.textContent = value;
-    const convertToString = result.toString();
-    const displayAnswer = convertToString.slice(0, 11);
-    this.computedNum.textContent = displayAnswer;
+    try {
+      let value = set.join("");
+      const result = parseFloat(eval(value));
+      const convertToString = result.toString();
+      const displayAnswer = convertToString.slice(0, 11);
+      this.total.textContent = value;
+      this.computedNum.textContent = displayAnswer;
+    } catch (err) {
+      console.log(`Error message: ${err}`);
+    }
   };
 }
 
