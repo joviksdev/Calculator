@@ -22,18 +22,18 @@ body {
 }
 
 .container {
-  width: 350px;
+  width: 340px;
   height: 600px;
   margin: 0 auto;
-  position: relative;
 }
 
 .calculator-wrapper {
   background-color: var(--secondary-color);
   color: var(--text-color);
   display: grid;
-  height: 550px;
-  position: absolute;
+  height: 500px;
+  width: 300px;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -42,6 +42,8 @@ body {
   padding: 0.5rem;
   border-radius: 1rem;
   box-shadow: var(--box-shadow), 0px 3px 7px rgb(0, 0, 0, 0.2);
+
+  overflow: hidden;
 }
 
 .display {
@@ -49,22 +51,24 @@ body {
   flex-direction: column;
   justify-content: center;
   grid-gap: 1rem;
+
   border-radius: 1rem;
   padding: 0.4rem;
-  height: 8rem;
+  height: 7rem;
   background-color: rgba(235, 235, 235, 0.5);
   border: 2px solid rgb(170, 170, 170);
   border-style: inset;
+  overflow: hidden;
 }
 
 .display-small {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   flex: 1;
   align-self: flex-end;
 }
 
 .display-large {
-  font-size: 2.5rem;
+  font-size: 2rem;
   flex: 2;
   align-self: flex-end;
 }
@@ -74,7 +78,7 @@ body {
   justify-content: center;
   align-items: center;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1.2rem;
+  grid-gap: 1rem;
   padding: 0.4rem;
 }
 
@@ -94,9 +98,48 @@ body {
   background: none;
 }
 
-.cal {
+.cal,
+.slide {
   background-color: rgb(0, 164, 230);
   color: var(--secondary-color);
+}
+
+.slide-panel {
+  position: absolute;
+  display: block;
+  right: 0rem;
+  bottom: 0rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  transform: translateX(100%);
+  transition: transform 0.5s;
+  background-color: white;
+  height: 360px;
+  padding: 1rem;
+  grid-gap: 1rem;
+}
+
+.slide-btn-in,
+.slide-btn-out {
+  font-size: 1.4rem;
+  position: absolute;
+  right: 0.1rem;
+  top: 63%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: inline-block;
+}
+
+.slide-in {
+  transform: translateX(0%);
 }
 
 .footer {
